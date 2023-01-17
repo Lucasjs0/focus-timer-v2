@@ -29,7 +29,7 @@ export default function Timer({
       }
 
       if(seconds <= 0) {
-        seconds = 10
+        seconds = 60
         --minutes
       }
 
