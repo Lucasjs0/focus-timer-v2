@@ -1,4 +1,9 @@
-export default function Controls() {
+export default function Controls({
+  buttonMoon,
+  body,
+  buttonSun
+}) {
+  
   let lastSound
   let lastButton
 
@@ -21,7 +26,21 @@ export default function Controls() {
     }
   }
 
+  function darkModeOn() {
+    buttonMoon.classList.remove('hide')
+    body.classList.add('dark')
+    buttonSun.classList.add('hide')
+  }
+
+  function darkModeOff() {
+    buttonMoon.classList.add('hide')
+    body.classList.remove('dark')
+    buttonSun.classList.remove('hide')
+  }
+
   return {
-    handleButtonClick
+    handleButtonClick,
+    darkModeOn,
+    darkModeOff
   }
 }

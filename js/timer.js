@@ -1,4 +1,3 @@
-
 export default function Timer({
   minutesDisplay,
   secondsDisplay
@@ -46,16 +45,18 @@ export default function Timer({
   }
 
   function increaseTime() {
-    if(minutes < 90) {
-      minutes += 5
+    let minutes = Number(minutesDisplay.textContent)
+    if(minutes <= 85) {
+      minutes = Number(minutes) + 5
     }
 
     minutesDisplay.textContent = String(minutes).padStart(2, "0")
   }
 
   function decreaseTime() {
-    if(minutes > 0) {
-      minutes -= 5
+    let minutes = Number(minutesDisplay.textContent)
+    if(minutes > 5) {
+      minutes = Number(minutes) - 5
     }
 
     minutesDisplay.textContent = String(minutes).padStart(2, "0")
